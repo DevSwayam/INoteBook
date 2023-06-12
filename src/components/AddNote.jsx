@@ -7,7 +7,7 @@ const AddNote = () => {
     const context = useContext(noteContext)
     const { addNote} = context;
 
-    const [note, setNote] = useState({title:"", description:"", tag:"Default", toRemember:""})
+    const [note, setNote] = useState({title:"", description:"", tag:"", toRemember:""})
 
     const handleClick = (e) =>{
         e.preventDefault(); // will make sure that page wont get reloaded
@@ -57,6 +57,18 @@ const AddNote = () => {
             className="form-control"
             id="toRemember"
             name="toRemember"
+            onChange={onChange}
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="tag" className="form-label">
+            tag
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="tag"
+            name="tag"
             onChange={onChange}
           />
         </div>

@@ -1,11 +1,10 @@
 import React from "react";
 import { useContext } from "react";
 import noteContext from "../context/notes/NoteContext";
-import { useState } from "react";
 
 
 const NoteItem = (props) => {
-  const { note } = props;
+  const { note, updateNote } = props;
   const context = useContext(noteContext)
   const { deleteNote} = context;
   const DeleteNote =()=>{
@@ -18,15 +17,19 @@ const NoteItem = (props) => {
         <div className="card-body">
           <h5 className="card-title">{note.title}</h5>
             <h6 className="card-subtitle "> Memory: {note.toRemember}</h6>
-          <p className="card-subtitle mb-2 -body-secondary">
+          <h6 className="card-subtitle mb-2 -body-secondary my-2 ">
             Description: {note.description}
-          </p>
-          <h6 className="card-subtitle mb-2 -body-secondary">
+          </h6>
+          <h6 className="card-subtitle mb-2 -body-secondary ">
             {" "}
             Last Updated: {Date(note.date).toLocaleString().substring(0, 15)}
           </h6>
+          <h6 className="card-subtitle mb-2 -body-secondary">
+            {" "}
+            Tag: {note.tag}
+          </h6>
             <i className="fa-solid fa-trash mx-3" onClick={DeleteNote}></i>
-            <i className="fa-solid fa-file-pen mx-3"></i>
+            <i className="fa-solid fa-file-pen mx-3" onClick={()=>{updateNote(note)}}></i>
         </div>
       </div>
     </div>
