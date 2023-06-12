@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
 import {
   Link,
   useLocation
@@ -7,8 +6,6 @@ import {
 
 export const NavBar = () => {
   let location = useLocation();
-  useEffect(() => {
-  }, [location]);
   
   return (
     <nav

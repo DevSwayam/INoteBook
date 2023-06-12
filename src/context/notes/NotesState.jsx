@@ -73,16 +73,19 @@ import { useState } from "react";
       }
 
       // Delete a Note
-      const DeleteNote =()=>{
-        
+      const deleteNote =(id)=>{
+        // TODO Api call
+        console.log("Deleting Note with Id" + id )
+        const newNotes = notes.filter((note)=>{return note._id!==id})
+        setNotes(newNotes)
       }
       // Edit A Note
-      const EditNote =()=>{
+      const editNote =()=>{
         
       }
 
       return(
-        <NoteContext.Provider value={{notes,addNote,EditNote,DeleteNote}}>
+        <NoteContext.Provider value={{notes,addNote,editNote,deleteNote}}>
             {props.children}
         </NoteContext.Provider>
     )
