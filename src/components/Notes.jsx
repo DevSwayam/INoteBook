@@ -41,7 +41,7 @@ const Notes = () => {
       note.etitle,
       note.edescription,
       note.etag,
-      note.toRemember
+      note.etoRemember
     );
     refClose.current.click();
   };
@@ -97,6 +97,8 @@ const Notes = () => {
                     name="etitle"
                     aria-describedby="emailHelp"
                     onChange={onChange}
+                    minLength={1} 
+                    required
                   />
                 </div>
                 <div className="mb-3">
@@ -110,11 +112,13 @@ const Notes = () => {
                     id="edescription"
                     name="edescription"
                     onChange={onChange}
+                    minLength={5} 
+                    required
                   />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="etoRemember" className="form-label">
-                    Memorys
+                    Memory
                   </label>
                   <input
                     value={note.etoRemember}
@@ -123,6 +127,8 @@ const Notes = () => {
                     id="etoRemember"
                     name="etoRemember"
                     onChange={onChange}
+                    minLength={3} 
+                    required
                   />
                 </div>
                 <div className="mb-3">
@@ -136,6 +142,8 @@ const Notes = () => {
                     id="etag"
                     name="etag"
                     onChange={onChange}
+                    minLength={3} 
+                    required
                   />
                 </div>
 

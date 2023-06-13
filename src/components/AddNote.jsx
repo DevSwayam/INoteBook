@@ -12,6 +12,7 @@ const AddNote = () => {
     const handleClick = (e) =>{
         e.preventDefault(); // will make sure that page wont get reloaded
         addNote(note.title,note.description,note.tag, note.toRemember);
+        setNote({title:"", description:"", tag:"", toRemember:""})
     }
 
     const onChange = (e) =>{
@@ -34,6 +35,9 @@ const AddNote = () => {
             name="title"
             aria-describedby="emailHelp"
             onChange={onChange}
+            minLength={1} 
+            required
+            value={note.title}
           />
         </div>
         <div className="mb-3">
@@ -46,6 +50,9 @@ const AddNote = () => {
             id="description"
             name="description"
             onChange={onChange}
+            minLength={5} 
+            required
+            value={note.description}
           />
         </div>
         <div className="mb-3">
@@ -58,6 +65,9 @@ const AddNote = () => {
             id="toRemember"
             name="toRemember"
             onChange={onChange}
+            minLength={1} 
+            required
+            value={note.toRemember}
           />
         </div>
         <div className="mb-3">
@@ -70,6 +80,9 @@ const AddNote = () => {
             id="tag"
             name="tag"
             onChange={onChange}
+            minLength={1} 
+            required
+            value={note.tag}
           />
         </div>
         

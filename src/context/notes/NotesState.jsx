@@ -19,7 +19,6 @@ import { useState } from "react";
        },
      });
      const json = await response.json()
-     console.log(json)
      setNotes(json)
     }
 
@@ -36,18 +35,7 @@ import { useState } from "react";
         body: JSON.stringify({title,description,tag,toRemember}), 
       });
 
-      const json = await response.json()
-      console.log(json);
-
-       console.log("Adding a New Note");
-        const note =  {"_id": "dsds",
-        "user": "6484fbd6c1d2c5b75976444f",
-        "title": title,
-        "description": description,
-        "tag": tag,
-        "toRemember": toRemember,
-        "date": "2023-06-11T17:03:19.655Z",
-        "__v": 0};
+      const note = await response.json()
         setNotes(notes.concat(note))
       }
 
@@ -65,7 +53,7 @@ import { useState } from "react";
             "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ4NGZiZDZjMWQyYzViNzU5NzY0NDRmIn0sImlhdCI6MTY4NjQzOTE2M30.Ka72cwiCZKboy_zgnnSeyUpDHkmG9FyNCiqVotI2u-E"
           }
         });
-        console.log(response.json());
+        
       }
 
 
@@ -80,8 +68,7 @@ import { useState } from "react";
           },
           body: JSON.stringify({title,description,tag,toRemember}), 
         });
-        const jsonn = response.json(); 
-        console.log(jsonn);
+    
       
         let newNotes = await JSON.parse(JSON.stringify(notes))
         // Logic Frontend
