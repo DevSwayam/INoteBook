@@ -23,15 +23,17 @@ router.post(
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       // is there is error then return reponse with error
-      return res.status(400).json({ erros: errors.array() });
+      success=false;
+      return res.status(400).json({ erros: errors.array() ,success});
     }
     //If there are no errors then create user
     try {
       let user = await User.findOne({ email: req.body.email });
       if (user) {
+        success = false;
         return res
           .status(300)
-          .json({ error: "A person with this email already exist" });
+          .json({ error: "A person with this email already exist" ,success});
       }
 
       //Securing PassWord
@@ -65,7 +67,8 @@ router.post(
         */
 
       // We will be using Auth Token as Response To user from which he can access the app
-      res.json({ authToken });
+      success = true;
+      res.json({ authToken, success });
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Some Eroor Occured");
@@ -89,15 +92,17 @@ router.post(
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       // is there is error then return reponse with error
-      return res.status(400).json({ erros: errors.array() });
+      success = false;
+      return res.status(400).json({ erros: errors.array(), success });
     }
     const { email, password } = req.body;
     try {
       let user = await User.findOne({ email });
       if (!user) {
+        success = false;
         return res
           .status(400)
-          .json({ error: "Please Try To Login With Right Credentials" });
+          .json({ error: "Please Try To Login With Right Credentials" , success});
       }
 
       const passwordCompare = await bcrypt.compare(password, user.password);
@@ -132,8 +137,9 @@ router.post(
       const user = await User.findById(userId).select("-password"); // This -password will make sure that from DataBase the pwssword wont get Back
         res.send(user)
     } catch (error) {
+      success = false;
       console.error(error.message);
-      res.status(500).send("Some Eroor Occured");
+      res.status(500).send("Some Eroor Occured", success);
     }
   }
 );

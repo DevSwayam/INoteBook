@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
 
-const Notes = () => {
+const Notes = (props) => {
   const [note, setNote] = useState({
     id: "",
     etitle: "",
@@ -44,6 +44,7 @@ const Notes = () => {
       note.etoRemember
     );
     refClose.current.click();
+    props.showAlert("Note Has been Updated", "success")
   };
 
   const onChange = (e) => {
@@ -52,7 +53,7 @@ const Notes = () => {
 
   return (
     <>
-      <AddNote />
+      <AddNote showAlert={props.showAlert}/>
       <button
         type="button"
         className="d-none btn btn-primary"
@@ -187,7 +188,7 @@ const Notes = () => {
         )}
         {notes.map((note) => {
           return (
-            <NoteItem key={note._id} updateNote={updateNote} note={note} />
+            <NoteItem showAlert={props.showAlert} key={note._id} updateNote={updateNote} note={note} />
           );
         })}
       </div>

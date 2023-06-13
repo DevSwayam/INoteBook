@@ -8,7 +8,8 @@ const NoteItem = (props) => {
   const context = useContext(noteContext)
   const { deleteNote} = context;
   const DeleteNote =()=>{
-    deleteNote(note._id)
+    deleteNote(note._id);
+    props.showAlert("Note Has Been Deleted", "success")
   }
   
   return (
