@@ -3,10 +3,16 @@ import {
   Link,
   useLocation
 } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const NavBar = (props) => {
+  const navigate = useNavigate()
   let location = useLocation();
-  
+  const handleLogOut=()=>{
+    localStorage.removeItem('token');
+    navigate('/login')
+  }
+
   return (
     <nav
       className="navbar navbar-expand-lg bg-body-tertiary "
@@ -44,10 +50,10 @@ export const NavBar = (props) => {
             </li>
           </ul>
         </div>
-        <div className="d-flex">
+        {!localStorage.getItem('token')?<form className="d-flex">
         <Link className="btn btn-primary mx-2" to="/login" role="button">Login</Link>
         <Link className="btn btn-primary mx-2" to="signup" role="button">SignUp</Link>
-        </div>
+        </form>: <button onClick={handleLogOut} type="button" className="btn btn-primary">Log Out</button>}
       </div>
     </nav>
   );
