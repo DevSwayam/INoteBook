@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const mongoURI = "mongodb://localhost:27017/NoteBook?"
+require('dotenv').config();
 
 const connecToMongo = async() => {
-    await mongoose.connect(mongoURI);
+    await mongoose.connect(process.env.mongoURI);
     console.log("Connected to mongoose")
 }
 
