@@ -186,8 +186,8 @@ const Notes = (props) => {
           </div>
         </div>
       </div>
-      <div className="row my-3">
-        <h2 className="my-3">Your Notes</h2>
+      <div className="row my-2">
+        <h2 className="my-2">Your Notes</h2>
         {notes.length === 0 && (
           <div className="card container justify-center my-3" style={{"width": "15.5remrem"}}>
             <div className="card-body ">
