@@ -16,8 +16,8 @@ const NoteItem = (props) => {
     <div className="col-md-3">
       <div className=" card text mb-3 my-4" style={{ maxWidth: "18rem" }}>
         <div className="card-body">
-          <h5 className="card-title">{note.title}</h5>
-            <h6 className="card-subtitle "> Memory: {note.toRemember}</h6>
+          <h5 className="card-subtitle">{note.title}</h5>
+            <h6 className="card-subtitle my-2 "> Memory: {note.toRemember}</h6>
           <h6 className="card-subtitle mb-2 -body-secondary my-2 ">
             Description: {note.description}
           </h6>

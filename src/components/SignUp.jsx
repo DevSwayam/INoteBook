@@ -15,7 +15,7 @@ const SignUp = (props) => {
         props.showAlert("Please Check Your Password", "danger")
         navigate("/signup");
       }else{
-        const response = await fetch(`http://localhost:5000/api/auth/createUser`, {
+        const response = await fetch(`https://notebook-mongodb-api.onrender.com/api/auth/createUser`, {
             method: "POST",
             headers: {
             "Content-Type": "application/json",

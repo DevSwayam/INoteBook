@@ -3,7 +3,7 @@ import NoteContext from "./NoteContext";
 import { useState } from "react";
 
  const NotesState = (props) => {
-  const host ="http://localhost:5000"
+  const host ="https://notebook-mongodb-api.onrender.com"
   const notesInitial=[]
   const [notes, setNotes] = useState(notesInitial)
     
