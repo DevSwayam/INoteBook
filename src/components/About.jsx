@@ -50,42 +50,6 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="container my-5">
-      <section className="features-section">
-        <div className="container">
-          <div className="row feature-row">
-            <div className="col-lg-3">
-              <div className="feature-card">
-                <i className="bi bi-check-circle"></i>
-                <h3>Add</h3>
-                <p>Add new notes to your collection with ease. Keep track of your thoughts, ideas, and important information.</p>
-              </div>
-            </div>
-            <div className="col-lg-3">
-              <div className="feature-card">
-                <i className="bi bi-star"></i>
-                <h3>Read</h3>
-                <p>Read your notes anytime, anywhere. Access your saved information quickly and efficiently.</p>
-              </div>
-            </div>
-            <div className="col-lg-3">
-              <div className="feature-card">
-                <i className="bi bi-heart"></i>
-                <h3>Delete</h3>
-                <p>Delete unwanted notes effortlessly. Remove outdated or irrelevant information from your notes app.</p>
-              </div>
-            </div>
-            <div className="col-lg-3">
-              <div className="feature-card">
-                <i className="bi bi-pencil"></i>
-                <h3>Edit</h3>
-                <p>Edit and update your existing notes with ease. Keep your information up to date and organized.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      </div>
       
     </div>
   );
