@@ -39,9 +39,9 @@ function App() {
         </Router>
         
       </NotesState>
-      /*<footer>
+      {/*<footer>
         <Footer/>
-      </footer> */
+      </footer> */}
       
 
     </>
